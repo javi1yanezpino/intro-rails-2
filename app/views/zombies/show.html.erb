@@ -20,5 +20,13 @@
   <%= @zombie.photo %>
 </p>
 
+<p>
+  <strong>Avatar:</strong>
+  <%= image_tag @zombie.avatar.variant(resize: "300x300") if @zombie.avatar.attached? %>
+</p>
+
+<%= image_tag @zombie.avatar.variant(resize: "100x100", negate:true, flip: true) if @zombie.avatar.attached? %>
+
+
 <%= link_to 'Edit', edit_zombie_path(@zombie) %> |
 <%= link_to 'Back', zombies_path %>

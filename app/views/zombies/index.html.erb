@@ -1,9 +1,8 @@
-      <p id="notice"><%= notice %></p>
-      <h1>Zombies</h1>
+
 
     <div class="container">
-
-
+      <p id="notice"><%= notice %></p>
+      <h1>Zombies</h1>
       <div class="row">
         <% @zombies.each do |zombie| %>
           <div class="col-sm-6 col-md-4">
@@ -15,19 +14,13 @@
                 <p><%= zombie.killed %></p>
                 <p><%= zombie.name %></p>
                 <p><%= zombie.health %></p>
-                <p><%= link_to 'Show', zombie %></p>
-                <p><%= link_to 'Edit', edit_zombie_path(zombie) %></p>
-                <p><%= link_to 'Destroy', zombie, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                <%= link_to 'Show', zombie, class: "btn btn-success" %>
+                <%= link_to 'Edit', edit_zombie_path(zombie), class: "btn btn-danger" %>
+                <%= link_to 'Destroy', zombie, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-info" %>
+                <%= link_to 'New Zombie', new_zombie_path, class: "btn btn-primary" %>
               </div>
             </div>
           </div>
         <% end%>
       </div>
     </div>
-
-
-
-<br>
-
-<%= link_to 'New Zombie', new_zombie_path %>

@@ -35,6 +35,7 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  config .active_storage.service = :local
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
